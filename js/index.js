@@ -1,9 +1,9 @@
 // Iteration 1: Names and Input
-let hacker1 = "Victoria";
+const hacker1 = "Victoria";
 
 console.log(`The driver's name is ${hacker1}.`);
 
-let hacker2 = "Sergio";
+const hacker2 = "Sergio";
 
 console.log(`The navigator's name is ${hacker2}.`);
 //------------------------------------------
@@ -28,10 +28,19 @@ if (hacker1Length > hacker2Length) {
 
 // Iteration 3: Loops
 //Name spaced in capital letters
+
 let hacker = "";
 
-for (let i = 0; i < hacker1Length; i++) {
+/*for (let i = 0; i < hacker1Length; i++) {
     hacker += hacker1[i].toUpperCase() + " ";
+};*/ //this for loop adds a space at the end of the hacker1 name
+
+for (let i = 0; i < hacker1Length; i++) {
+    if (i < hacker1Length - 1) {
+        hacker += hacker1[i].toUpperCase() + ' ';
+    } else {
+        hacker += hacker1[i].toUpperCase();
+    }
 };
 
 console.log(`Spaced and capital letters: ${hacker}.`);
@@ -43,11 +52,11 @@ for (let i = hacker1Length - 1; i >= 0; i--) {
     hackerReverse += hacker1[i];
 };
 
-console.log(`Reversed: ${hackerReverse}.`);
+console.log(`Reversed: ${hackerReverse}`);
 
 //Lexicographic order
 
-let comparison = hacker1.localeCompare(hacker2);
+const comparison = hacker1.localeCompare(hacker2);
 
 if (comparison === 1) {
     console.log(`Yo, the navigator goes first definitely.`)
@@ -97,8 +106,9 @@ console.log(`There are ${etCounter} "et" words in our Lorem random text.`);
 //------------------------------------------
 //Bonus 2
 
-let phraseToCheck = "step on no pets";
+const phraseToCheck = "step on no pets";
 let phraseReversed = "";
+
 /* Lo que dejamos a medias en clase
 for (let i = phraseToCheck - 1; i >= 0; i--) {
     phraseReversed += phraseToCheck[i];
